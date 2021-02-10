@@ -8,9 +8,13 @@ function ContextProvider({ children }) {
   
   function addToCart(newItem) {
     setCartItems(prevItems => [...prevItems, newItem]);
-    
   }
-  console.log('cart items--',cartItems)
+    
+  function removeFromCart(id) {
+    const filterItem = prevItems => prevItems.filter(item => item.id !== id);
+    setCartItems(filterItem);
+  }
+  console.log("cart items--", cartItems);
   const shopProductsArray = [
     {
       id: 1,
@@ -60,7 +64,15 @@ function ContextProvider({ children }) {
   }, []);
 
   return (
-    <Context.Provider value={{ shopProducts, addToCart, cartItems, setCartItems }}>
+    <Context.Provider
+      value={{
+        shopProducts,
+        addToCart,
+        cartItems,
+        setCartItems,
+        removeFromCart,
+      }}
+    >
       {children}
     </Context.Provider>
   );
