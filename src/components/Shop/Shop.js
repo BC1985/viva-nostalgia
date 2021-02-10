@@ -5,43 +5,19 @@ import { Context } from "../../Context";
 
 import "./Shop.css";
 import Cart from "../Cart/Cart";
-function Shop({img}) {
-
+function Shop() {
   const { shopProducts, addToCart, cartItems, setCartItems } = useContext(Context);
-//   const [cartItems, setCartItems] = useState([]);
-  const [clicked, setClicked] = useState(false);
-
-  const addHandler = () => {
-    const clickedButton = shopProducts.some(x => x.id === img.id);
-    addToCart(img);
-    setClicked(clickedButton);
-    console.log("cart items-", cartItems);
-  };
-  
   const images = shopProducts.map(img => {
-      return (
-          <Image
-          key={img.id}
-          img={img}
-          addToCart={addToCart}
-          />
-          );
-        });
-        return (
-            <div>
+    return <Image key={img.id} img={img} addToCart={addToCart} />;
+  });
+  return (
+    <div>
       <img src={shop} alt="shop" />
       <div className="shop-shape"></div>
       <main className="shop-container">
         {images}
-        
         <Cart cartItems={cartItems} setCartItems={setCartItems} />
-        {/* <p>You have {itemsInCart} items in your cart </p> */}
       </main>
-      {/* <Cart
-        cartItems={cartItems}
-        // addHandler={addHandler}
-        setCartItems={setCartItems}
-    /> */}
     </div>
   );
 }
