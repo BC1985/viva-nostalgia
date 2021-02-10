@@ -1,0 +1,15 @@
+.mobile-nav ul{
+display: flex;
+color: white;
+padding: 0 3em;
+
+justify-content: space-around;
+
+}
+
+.mobile-nav li {
+list-style: none;
+cursor: pointer;
+font-family: 'Sorts Mill Goudy', serif;
+
+}

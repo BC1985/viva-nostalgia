@@ -1,0 +1,38 @@
+.coffee-menu-container  {
+    padding: 1em 2em;
+    font-family: 'Baskervville', serif;
+    text-align: left;
+}
+
+img {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+.shape{
+    /* clip-path: polygon(100% 100%, 0 50%, 100% 30%, -100% 100%); */
+    content: "";
+    z-index: 4;
+    margin-top: -7%;
+    margin-left: 50%;
+    height:30px;
+    width:60vw;
+    background-color: rgb(135, 172, 173);
+
+}
+
+.menu ul    {
+    padding: 0;
+}
+
+.menu li {
+margin-bottom: 0.5em;
+list-style: none;
+font-family: 'Cormorant', serif;
+
+}
+
+.menu  {
+display: flex;
+justify-content: space-between;
+}

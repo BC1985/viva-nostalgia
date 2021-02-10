@@ -1,0 +1,25 @@
+
+.add-to-cart {
+    display: flex;
+    padding: 0.5em;
+    border-radius: 5%;
+    color:white;
+    background-color: rgb(224, 171, 24);
+    justify-content: space-evenly;
+
+    cursor: pointer;
+}
+.item-added  {
+    display: flex;
+    padding: 0.5em;
+    border-radius: 5%;
+    color:white;
+    background-color: rgb(224, 54, 24);
+    justify-content: space-evenly;
+    
+}
+.remove-item{
+    background: red;
+    padding: 1em;
+    color:white;
+}
