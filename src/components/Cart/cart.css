@@ -1,0 +1,16 @@
+.cart-item-container{
+    display: inline-flex;
+    padding: 10px;
+    flex-direction: column;
+}
+.cart-item-container img{
+    border-radius: 5%;
+    position: relative;
+}
+.cart-container{
+    padding: 5%;
+}
+.cart-img{
+    width: 200px;
+    margin-bottom: 10px;
+}
