@@ -1,10 +1,10 @@
 import React from "react";
 
-function AddButton({ addToCart, clicked }) {
+function AddButton({ clicked, clickHandler }) {
   const setClassName = clicked ? "item-added" : "add-to-cart";
   return (
     <>
-      <span className={setClassName} onClick={addToCart}>
+      <span className={setClassName} onClick={clickHandler}>
         {!clicked ? "Add to cart" : "Remove"}
       </span>
     </>
