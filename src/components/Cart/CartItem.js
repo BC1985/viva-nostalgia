@@ -1,6 +1,6 @@
 import React from "react";
 import "./cart.css";
-function CartIcon({ item }) {
+function CartItem({ item }) {
   return (
     <div className="cart-item-container">
       <img src={item.url} className="cart-img" />
@@ -11,4 +11,4 @@ function CartIcon({ item }) {
   );
 }
 
-export default CartIcon;
+export default CartItem;
