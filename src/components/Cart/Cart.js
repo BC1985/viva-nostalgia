@@ -5,8 +5,7 @@ function Cart({ cartItems }) {
   const getTotalSum = () => {
     return cartItems.reduce((sum, { price }) => sum + price, 0);
   };
-
-  const singularOrPlural =
+  const numberOfItems =
     cartItems.length === 1 ? `1 item` : `${cartItems.length} items`;
   const cartItemElements = cartItems.map(item => (
     <CartItem key={item.id} item={item} />
@@ -17,7 +16,7 @@ function Cart({ cartItems }) {
       <h3>
         {cartItems.length === 0
           ? "Cart is Empty."
-          : `You have ${singularOrPlural} in your cart.`}
+          : `You have ${numberOfItems} in your cart.`}
       </h3>
       {cartItemElements}
       <div>Total: ${getTotalSum()}</div>
