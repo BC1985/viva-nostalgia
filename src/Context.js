@@ -5,6 +5,7 @@ const Context = React.createContext();
 function ContextProvider({ children }) {
   const [shopProducts, setShopProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [qty, setQty] = useState();
   
   function addToCart(newItem) {
     setCartItems(prevItems => [...prevItems, newItem]);
@@ -54,7 +55,7 @@ function ContextProvider({ children }) {
     {
       id: 6,
       url: "https://picsum.photos/id/355/200/300",
-      itemName: "Vintage camera",
+      itemName: "film camera",
       itemDescription: "Lorem ipsum dolor sit amet",
       price: 70,
     },
@@ -63,6 +64,11 @@ function ContextProvider({ children }) {
     setShopProducts(shopProductsArray);
   }, []);
 
+  function increaseQty(product, amount){
+    cartItems.find(item => item.itemName === product.itemName).qty = amount;
+    setQty(amount);
+    console.log(amount);
+  };
   return (
     <Context.Provider
       value={{
@@ -71,6 +77,8 @@ function ContextProvider({ children }) {
         cartItems,
         setCartItems,
         removeFromCart,
+        increaseQty,
+        qty,
       }}
     >
       {children}
