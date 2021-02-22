@@ -1,25 +1,13 @@
 import React from "react";
-import CartItem from "./CartItem";
+import { NavLink } from "react-router-dom";
+import CartIcon from "./CartIcon";
 function Cart({ cartItems }) {
-
-  const getTotalSum = () => {
-    return cartItems.reduce((sum, { price }) => sum + price, 0);
-  };
-  const numberOfItems =
-    cartItems.length === 1 ? `1 item` : `${cartItems.length} items`;
-  const cartItemElements = cartItems.map(item => (
-    <CartItem key={item.id} item={item} />
-  ));
   return (
     <div className="cart-container">
-      <h2>Cart items</h2>
-      <h3>
-        {cartItems.length === 0
-          ? "Cart is Empty."
-          : `You have ${numberOfItems} in your cart.`}
-      </h3>
-      {cartItemElements}
-      <div>Total: ${getTotalSum()}</div>
+      <h2>
+        <CartIcon cartItems={cartItems} />
+      </h2>
+      <NavLink to="/checkout">checkout</NavLink>
     </div>
   );
 }
