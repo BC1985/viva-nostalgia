@@ -31,8 +31,12 @@ list-style: none;
 font-family: 'Cormorant', serif;
 
 }
+.item-price{
+    justify-self: end;
+}
 
 .menu  {
-display: flex;
-justify-content: space-between;
+display: grid;
+grid-template-columns: 50px auto 50px;
+grid-template-rows: auto;
 }
